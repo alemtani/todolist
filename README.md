@@ -24,12 +24,9 @@ REACT_APP_API_URL="ENTER YOUR API URL"
 
 # Backend
 DB_USER="ENTER YOUR DB USER"
-DB_HOST="ENTER YOUR DB HOST"
 DB_NAME="ENTER YOUR DB NAME"
 DB_PASSWORD="ENTER YOUR DB PASSWORD"
-DB_PORT="ENTER YOUR DB PORT"
 JWT_SECRET="ENTER YOUR JWT SECRET"
-PORT="ENTER YOUR SERVER PORT"
 ```
 
 Additionally, you need to create a file called `db/password.txt` (create the `db` directory too) where you insert the same database password in a SINGLE line (NO NEWLINES). The end product should look as follows.
