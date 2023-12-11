@@ -16,6 +16,9 @@ import useFlash from '../../hooks/useFlash';
 import taskService from '../../services/taskService';
 import categoryService from '../../services/categoryService';
 
+// Import utils
+import { getEndOfDayInUtc } from '../../utils';
+
 function TaskList() {
     // Use state to store tasks
     const [tasks, setTasks] = useState([]);
@@ -37,7 +40,10 @@ function TaskList() {
                 newTasks = await taskService.getTasks(auth.token);
                 break;
             case '/today':
-                newTasks = await taskService.getTasksToday(auth.token);
+                /* Note: Need to use '/' endpoint and filter for today tasks */
+                newTasks = await taskService.getTasks(auth.token);
+                const endOfDayInUtc = getEndOfDayInUtc();
+                newTasks = newTasks.filter(task => new Date(task.due_timestamp) <= endOfDayInUtc);
                 break;
             case '/upcoming':
                 newTasks = await taskService.getTasksUpcoming(auth.token);

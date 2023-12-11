@@ -34,8 +34,28 @@ function convertUtcToLocal(timestamp) {
     return moment.utc(timestamp).local().format('MM/DD/YYYY hh:mm A')
 }
 
+/* Utility function to convert end-of-day today to UTC time. */
+function getEndOfDayInUtc() {
+    // Extract the current date into endOfDay object
+    const currentDate = new Date();
+    const endOfDay = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        currentDate.getDate(),
+        23,
+        59,
+        59,
+        999
+    );
+
+    // Increment minutes to get UTC time
+    endOfDay.setMinutes(endOfDay.getMinutes() + endOfDay.getTimezoneOffset());
+    return endOfDay;
+}
+
 export {
     callApi,
     formatTimestamp,
     convertUtcToLocal,
+    getEndOfDayInUtc,
 };
