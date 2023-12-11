@@ -14,7 +14,7 @@ router.put('/:id', taskController.updateTask);
 /* DELETE task. */
 router.delete('/:id', taskController.deleteTask);
 
-/* GET today tasks. */
+/* DEPRECATED: Need to filter tasks from frontend due to timezone offsets. */
 router.get('/today', taskController.getTasksToday);
 
 /* GET upcoming tasks. */
