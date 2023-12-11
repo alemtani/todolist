@@ -1,11 +1,11 @@
 # Todolist
 
-This is a simple full-stack CRUD application written using the PERN stack, featuring authentication/authorization and Docker containerization techniques.
+Todolist is a simple full-stack application written using the PERN stack. It supports CRUD operations for managing tasks (and task categories), authentication/authorization for accessing tasks, and Docker containerization for easy deployment and scalability.
 
 ## Technologies
-- React.js
-- Node.js + Express.js
-- PostgreSQL
+- React
+- Node + Express
+- Postgres
 - Docker
 
 ## Installation
@@ -60,12 +60,19 @@ And to shutdown the application:
 docker compose down
 ```
 
+## Features
+
+- **Task Management**: Supports CRUD operations for managing tasks.
+  - Can define task name, due date (as a timestamp), and category.
+  - Can access tasks due today and upcoming tasks (includes overdue tasks).
+- **Categories Management**: Supports CRUD operations for managing task categories.
+  - Can assign tasks to different categories.
+- **Authentication + Authorization**: Supports authentication + authorization of user tasks using [JSON Web Tokens (JWT)](https://datatracker.ietf.org/doc/html/rfc7519).
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 
