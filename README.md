@@ -19,10 +19,7 @@ You also need to make sure you have Docker Desktop up and running in the backgro
 In the root directory, create a `.env` file with the following variables:
 
 ```
-# Frontend
 REACT_APP_API_URL="ENTER YOUR API URL"
-
-# Backend
 DB_USER="ENTER YOUR DB USER"
 DB_NAME="ENTER YOUR DB NAME"
 DB_PASSWORD="ENTER YOUR DB PASSWORD"
